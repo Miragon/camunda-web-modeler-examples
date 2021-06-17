@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html,
+body {
+  height: 100vh;
+}
+
+/* Don't show palette in two-column mode */
+.djs-palette.two-column.open {
+  width: 48px !important;
+}
+
+
