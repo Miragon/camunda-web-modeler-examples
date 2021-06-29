@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <title>Modeler Test</title>
+    <script src="index.js"></script>
+</head>
+
+<body onload="initialize()" style="margin: 0; height: 100%">
+<div id="root" style="height: 100%"></div>
+
+<!-- React -->
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+<!-- bpmn-js -->
+<link rel="stylesheet" href="https://unpkg.com/bpmn-js@8.7.0/dist/assets/diagram-js.css"/>
+<link rel="stylesheet" href="https://unpkg.com/bpmn-js@8.7.0/dist/assets/bpmn-font/css/bpmn.css"/>
+<script src="https://unpkg.com/bpmn-js@8.7.0/dist/bpmn-modeler.development.js"></script>
+
+<!-- dmn-js -->
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/diagram-js.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-js-shared.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-js-drd.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-js-decision-table.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-js-decision-table-controls.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-js-literal-expression.css">
+<link rel="stylesheet" href="https://unpkg.com/dmn-js@11.0.1/dist/assets/dmn-font/css/dmn.css">
+<script src="https://unpkg.com/dmn-js@11.0.1/dist/dmn-modeler.development.js"></script>
+
+<!-- Monaco Editor -->
+<script>var require = {paths: {'vs': 'https://unpkg.com/monaco-editor@0.25.2/min/vs'}};</script>
+<script src="https://unpkg.com/monaco-editor@0.25.2/min/vs/loader.js"></script>
+<script src="https://unpkg.com/monaco-editor@0.25.2/min/vs/editor/editor.main.nls.js"></script>
+<script src="https://unpkg.com/monaco-editor@0.25.2/min/vs/editor/editor.main.nls.de.js"></script>
+<script src="https://unpkg.com/monaco-editor@0.25.2/min/vs/editor/editor.main.js"></script>
+<link rel="stylesheet" data-name="vs/editor/editor.main"
+      href="https://unpkg.com/monaco-editor@0.25.2/min/vs/editor/editor.main.css">
+
+<!-- Miragon Modeler -->
+<link rel="stylesheet" href="https://unpkg.com/@miragon/camunda-web-modeler-test@0.0.6/dist/bundle.css"/>
+<script src="https://unpkg.com/@miragon/camunda-web-modeler-test@0.0.6/dist/bundle.min.js" async></script>
+</body>
+
+</html>

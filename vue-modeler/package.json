@@ -1,5 +1,5 @@
 {
-  "name": "vue-web-modeler",
+  "name": "vue-modeler",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@miragon/camunda-web-modeler-test": "^0.0.2",
+    "@miragon/camunda-web-modeler-test": "^0.0.5",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vuera": "^0.2.7"

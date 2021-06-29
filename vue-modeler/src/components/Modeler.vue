@@ -199,7 +199,6 @@ export default {
       xml: BPMN,
       propertiesPanelOptions: propertiesPanelOptions,
       xmlTabOptions: xmlTabOptions,
-      modelerOptions: modelerOptions,
       modelerTabOptions: {
         className: undefined,
         disabled: undefined,
