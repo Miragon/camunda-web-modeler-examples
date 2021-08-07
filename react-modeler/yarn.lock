@@ -1458,12 +1458,13 @@
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
 
-"@miragon/camunda-web-modeler-test@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@miragon/camunda-web-modeler-test/-/camunda-web-modeler-test-0.0.6.tgz#278a9ea3b3318f32e16b434e0d78caf18f22df3b"
-  integrity sha512-1jZbe1WJKZzahB1OwAgaDk/70YmbXcxD3EbRJNQ0/hKdxS1D7ZUpwI9yVoTlPmMtEm4jQXbKQjno5fjAPtkd4Q==
+"@miragon/camunda-web-modeler@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@miragon/camunda-web-modeler/-/camunda-web-modeler-0.0.1.tgz#095792dec9b5694551402699f4cc4f45e3e18965"
+  integrity sha512-KhkVMKL6L8k/0vPqkLex0zfrqHUp1weYm2hQKpzLUcxLrv68ysPEPhXzXh9GsdsXNZO/vkFQ0giE/tzRk1kC0w==
   dependencies:
     "@material-ui/styles" "^4.11.4"
+    "@seznam/compose-react-refs" "^1.0.6"
     "@uiw/react-monacoeditor" "^3.2.2"
     bpmn-js "^8.7.0"
     bpmn-js-properties-panel "^0.43.1"
@@ -1544,6 +1545,11 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@seznam/compose-react-refs@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@seznam/compose-react-refs/-/compose-react-refs-1.0.6.tgz#6ec4e70bdd6e32f8e70b4100f27267cf306bd8df"
+  integrity sha512-izzOXQfeQLonzrIQb8u6LQ8dk+ymz3WXTIXjvOlTXHq6sbzROg3NWU+9TTAOpEoK9Bth24/6F/XrfHJ5yR5n6Q==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"

@@ -1,4 +1,4 @@
-# vue-modeler
+# vue modeler
 
 ## Project setup
 

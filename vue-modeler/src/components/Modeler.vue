@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {BpmnModeler} from "@miragon/camunda-web-modeler-test";
+import {BpmnModeler} from "@miragon/camunda-web-modeler";
 
 const BPMN = `<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1yociy1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
   <bpmn:process id="Process_1j0yj4d" isExecutable="true">

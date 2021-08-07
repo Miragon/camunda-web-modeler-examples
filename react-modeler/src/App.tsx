@@ -1,16 +1,15 @@
-import { BpmnModeler } from "@miragon/camunda-web-modeler-test";
-import CustomBpmnJsModeler
-    from "@miragon/camunda-web-modeler-test/dist/bpmnio/bpmn/CustomBpmnJsModeler";
-import { isBpmnIoEvent } from "@miragon/camunda-web-modeler-test/dist/events/bpmnio/BpmnIoEvents";
-import { Event } from "@miragon/camunda-web-modeler-test/dist/events/Events";
+import {BpmnModeler} from "@miragon/camunda-web-modeler";
+import CustomBpmnJsModeler from "@miragon/camunda-web-modeler/dist/bpmnio/bpmn/CustomBpmnJsModeler";
+import {isBpmnIoEvent} from "@miragon/camunda-web-modeler/dist/events/bpmnio/BpmnIoEvents";
+import {Event} from "@miragon/camunda-web-modeler/dist/events/Events";
 import {
     ContentSavedReason,
     isContentSavedEvent
-} from "@miragon/camunda-web-modeler-test/dist/events/modeler/ContentSavedEvent";
-import { isNotificationEvent } from "@miragon/camunda-web-modeler-test/dist/events/modeler/NotificationEvent";
-import { isPropertiesPanelResizedEvent } from "@miragon/camunda-web-modeler-test/dist/events/modeler/PropertiesPanelResizedEvent";
-import { isUIUpdateRequiredEvent } from "@miragon/camunda-web-modeler-test/dist/events/modeler/UIUpdateRequiredEvent";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+} from "@miragon/camunda-web-modeler/dist/events/modeler/ContentSavedEvent";
+import {isNotificationEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/NotificationEvent";
+import {isPropertiesPanelResizedEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/PropertiesPanelResizedEvent";
+import {isUIUpdateRequiredEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/UIUpdateRequiredEvent";
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import './App.css';
 import "bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css";
 
@@ -153,7 +152,7 @@ const App: React.FC = () => {
                     bpmnJsOptions: bpmnJsOptions,
                     modelerOptions: modelerOptions,
                     propertiesPanelOptions: propertiesPanelOptions
-                }} />
+                }}/>
         </div>
     );
 }
