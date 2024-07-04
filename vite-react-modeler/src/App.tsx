@@ -36,6 +36,7 @@ const App: React.FC = () => {
     const onSaveClicked = useCallback(async () => {
         if (!modelerRef.current) {
             // Should actually never happen, but required for type safety
+            console.log("Modeler not initialized yet.")
             return;
         }
 
@@ -107,7 +108,7 @@ const App: React.FC = () => {
 
     const modelerOptions = useMemo(() => ({
         className: undefined,
-        ref: modelerRef,
+        refs: [modelerRef],
         container: undefined,
         containerId: undefined,
         size: {
@@ -143,8 +144,8 @@ const App: React.FC = () => {
             </button>
 
             <BpmnModeler
-                xml={BPMN}
-                onEvent={console.log}
+                xml={xml}
+                onEvent={onEvent}
                 xmlTabOptions={xmlTabOptions}
                 modelerTabOptions={{
                     className: undefined,
