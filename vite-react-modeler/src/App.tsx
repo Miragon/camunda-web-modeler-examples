@@ -28,7 +28,7 @@ const App: React.FC = () => {
         newSvg: string | undefined,
         reason: ContentSavedReason
     ) => {
-        console.log(`Model has been changed because of ${reason}`);
+        console.debug(`Model has been changed because of ${reason}`);
         // Do whatever you want here, save the XML and SVG in the backend etc.
         setXml(newXml);
     }, []);
@@ -36,13 +36,13 @@ const App: React.FC = () => {
     const onSaveClicked = useCallback(async () => {
         if (!modelerRef.current) {
             // Should actually never happen, but required for type safety
-            console.log("Modeler not initialized yet.")
+            console.debug("Modeler not initialized yet.")
             return;
         }
 
-        console.log("Saving model...");
+        console.debug("Saving model...");
         const result = await modelerRef.current.save();
-        console.log("Saved model!", result.xml, result.svg);
+        console.debug("Saved model!", result.xml, result.svg);
     }, []);
 
     const onEvent = useCallback(async (event: Event<any>) => {
@@ -68,7 +68,7 @@ const App: React.FC = () => {
         if (isPropertiesPanelResizedEvent(event)) {
             // The user has resized the properties panel. You can save this value e.g. in local
             // storage to restore it on next load and pass it as initializing option.
-            console.log(`Properties panel has been resized to ${event.data.width}`);
+            console.debug(`Properties panel has been resized to ${event.data.width}`);
             return;
         }
 
@@ -78,7 +78,7 @@ const App: React.FC = () => {
         }
 
         // eslint-disable-next-line no-console
-        console.log("Unhandled event received", event);
+        console.debug("Unhandled event received", event);
     }, [onXmlChanged]);
 
     /**
@@ -129,16 +129,17 @@ const App: React.FC = () => {
                 onClick={onSaveClicked}
                 style={{
                     position: "absolute",
-                    zIndex: 100,
-                    top: 25,
-                    left: "calc(50% - 100px)",
+                    zIndex: 1000,
+                    bottom: 25,
+                    right: 25,
                     textTransform: "none",
                     fontWeight: "bold",
                     minWidth: "200px",
                     minHeight: "40px",
                     backgroundColor: "yellow",
                     borderWidth: "1px",
-                    borderRadius: "4px"
+                    borderRadius: "4px",
+                    cursor: "pointer"
                 }}>
                 Save Diagram
             </button>
