@@ -41,8 +41,7 @@ const App: React.FC = () => {
         }
 
         console.debug("Saving model...");
-        const result = await modelerRef.current.save();
-        console.debug("Saved model!", result.xml, result.svg);
+        await modelerRef.current.save();
     }, []);
 
     const onEvent = useCallback(async (event: Event<any>) => {
