@@ -17,25 +17,19 @@
     yarn build
     ```
    
-4. Create a link to `camunda-web-modeler` repository
+4. Create a link to `camunda-web-modeler` repository (`yarn v4`)
     ```shell
-    # cd camunda-web-modeler
-    yarn link
+    # cd camunda-web-modeler-example/vite-react-modeler
+    yarn link <path-to-camunda-web-modeler>
     ```
    
-5. Link `camunda-web-modeler` to this repository
-    ```shell
-    # cd vite-react-modeler
-    yarn link @miragon/camunda-web-modeler
-    ```
-
-6. Install dependencies
+5. Install dependencies
     ```bash
     # cd vite-react-modeler
     yarn install
     ```
    
-7. Start the development server
+6. Start the development server
     ```bash
     # cd vite-react-modeler
     yarn dev
