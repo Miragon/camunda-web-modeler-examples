@@ -896,9 +896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miragon/camunda-web-modeler@portal:/Users/peter/Projects/web-modeler/camunda-web-modeler::locator=vite-react-modeler%40workspace%3A.":
+"@miragon/camunda-web-modeler@portal:./../../camunda-web-modeler::locator=vite-react-modeler%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@miragon/camunda-web-modeler@portal:/Users/peter/Projects/web-modeler/camunda-web-modeler::locator=vite-react-modeler%40workspace%3A."
+  resolution: "@miragon/camunda-web-modeler@portal:./../../camunda-web-modeler::locator=vite-react-modeler%40workspace%3A."
   dependencies:
     "@babel/eslint-parser": "npm:^7.24.8"
     "@bpmn-io/properties-panel": "npm:^3.22.3"

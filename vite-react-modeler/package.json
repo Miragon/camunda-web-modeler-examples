@@ -35,7 +35,7 @@
   "resolutions": {
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
-    "@miragon/camunda-web-modeler": "portal:/Users/peter/Projects/web-modeler/camunda-web-modeler"
+    "@miragon/camunda-web-modeler": "portal:./../../camunda-web-modeler"
   },
   "packageManager": "yarn@4.3.1"
 }
