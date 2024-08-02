@@ -4,22 +4,25 @@
   "private": true,
   "dependencies": {
     "@miragon/camunda-web-modeler": "^0.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.0.1"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.23",
-    "@types/node": "^18.x",
+    "@types/node": "^20.x",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.1",
-    "typescript": "^5.5.3",
-    "web-vitals": "^2.0.1"
+    "typescript": "^5.5.3"
   },
   "resolutions": {
     "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.2"
+    "@types/react-dom": "17.0.2",
+    "@miragon/camunda-web-modeler": "portal:./../../camunda-web-modeler"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@4.3.1"
 }
