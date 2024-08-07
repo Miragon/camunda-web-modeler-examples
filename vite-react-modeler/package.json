@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@miragon/camunda-web-modeler": "0.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-tabs": "^6.0.2",
     "web-vitals": "^2.0.1"
   },
   "devDependencies": {
@@ -21,8 +22,8 @@
     "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.23",
     "@types/node": "20.x",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
@@ -33,8 +34,6 @@
     "vite": "^5.3.5"
   },
   "resolutions": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
     "@miragon/camunda-web-modeler": "portal:./../../camunda-web-modeler"
   },
   "packageManager": "yarn@4.3.1"
