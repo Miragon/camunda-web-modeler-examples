@@ -10,7 +10,7 @@ import {isBpmnIoEvent} from "@miragon/camunda-web-modeler/dist/events/bpmnio/Bpm
 import {isNotificationEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/NotificationEvent";
 import {isPropertiesPanelResizedEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/PropertiesPanelResizedEvent";
 import {isUIUpdateRequiredEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/UIUpdateRequiredEvent";
-import {DmnPropertiesPanelOptions} from "../../../../camunda-web-modeler/dist/editor/DmnEditor";
+import {DmnPropertiesPanelOptions} from "@miragon/camunda-web-modeler/dist/editor/DmnEditor";
 
 const MyDmnModeler = () => {
     const modelerRef = useRef<CustomDmnJsModeler>();
