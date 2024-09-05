@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@miragon/camunda-web-modeler": "0.0.1",
+    "@miragon/camunda-web-modeler": "0.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-tabs": "^6.0.2",

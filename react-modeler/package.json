@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@miragon/camunda-web-modeler": "^0.0.1",
+    "@miragon/camunda-web-modeler": "^0.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-tabs": "^6.0.2",
@@ -21,7 +21,8 @@
     "typescript": "^5.5.3"
   },
   "resolutions": {
-    "@miragon/camunda-web-modeler": "portal:./../../camunda-web-modeler"
+    "@miragon/camunda-web-modeler": "portal:./../../camunda-web-modeler",
+    "min-dash": "4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
