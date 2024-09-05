@@ -3,14 +3,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It is used for testing the development of the `@miragon/camunda-web-modeler` project.
 
-> [!IMPORTANT]
-> This project uses the yarn `protal` protocol to **link** the local 
-> [camunda-web-modeler](https://github.com/miragon/camunda-web-modeler) project.
-> As described in the README.md of the `@miragon/camunda-web-modeler` project,
-> there is an issue with `min-dash` > 4.2.
-> To fix this while also using the linked project, you have to add the `resolutions` 
-> section as described to the `package.json` of the local `camunda-web-modeler` repo.
-
 ## Available Scripts
 
 In the project directory, you can run:
