@@ -12,14 +12,21 @@ code {
     monospace;
 }
 
-html,
-body {
-  height: 100vh;
-}
-
 /* Don't show palette in two-column mode */
 .djs-palette.two-column.open {
   width: 48px !important;
 }
 
+.root {
+  height: 100vh;
+}
 
+.react-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.react-tabs__tab-panel--selected {
+  flex-grow: 1;
+}

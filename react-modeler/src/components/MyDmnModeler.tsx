@@ -1,6 +1,5 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {DmnModeler} from "@miragon/camunda-web-modeler";
-import CustomDmnJsModeler from "@miragon/camunda-web-modeler/dist/bpmnio/dmn/CustomDmnJsModeler";
 import {Event} from "@miragon/camunda-web-modeler/dist/events/Events";
 import {
     ContentSavedReason,
@@ -12,9 +11,7 @@ import {isPropertiesPanelResizedEvent} from "@miragon/camunda-web-modeler/dist/e
 import {isUIUpdateRequiredEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/UIUpdateRequiredEvent";
 import {DmnPropertiesPanelOptions} from "@miragon/camunda-web-modeler/dist/editor/DmnEditor";
 
-const MyDmnModeler = () => {
-    const modelerRef = useRef<CustomDmnJsModeler>();
-
+const MyDmnModeler = (props: any) => {
     const [xml, setXml] = useState<string>("");
 
     useEffect(() => {
@@ -30,17 +27,6 @@ const MyDmnModeler = () => {
         console.debug(`Model has been changed because of ${reason}`);
         // Do whatever you want here, save the XML and SVG in the backend, etc.
         setXml(newXml);
-    }, []);
-
-    const onSaveClicked = useCallback(async () => {
-        if (!modelerRef.current) {
-            // Should actually never happen, but required for type safety
-            console.debug("Modeler not initialized yet.")
-            return;
-        }
-
-        const { xml } = await modelerRef.current.save({ format: true });
-        console.debug("Model saved...", xml);
     }, []);
 
     const onEvent = useCallback(async (event: Event<any>) => {
@@ -105,7 +91,7 @@ const MyDmnModeler = () => {
 
     const modelerOptions = useMemo(() => ({
         className: undefined,
-        refs: [modelerRef],
+        refs: [props.modelerRef],
         container: undefined,
         containerId: undefined,
         size: {
@@ -113,46 +99,22 @@ const MyDmnModeler = () => {
             min: undefined,
             initial: undefined
         }
-    }), []);
+    }), [props.modelerRef]);
 
     const bpmnJsOptions = useMemo(() => undefined, []);
 
     return (
-        <div style={{
-            height: "100vh"
-        }}>
-
-            <button
-                onClick={onSaveClicked}
-                style={{
-                    position: "absolute",
-                    zIndex: 1000,
-                    bottom: 25,
-                    right: 25,
-                    textTransform: "none",
-                    fontWeight: "bold",
-                    minWidth: "200px",
-                    minHeight: "40px",
-                    backgroundColor: "yellow",
-                    borderWidth: "1px",
-                    borderRadius: "4px",
-                    cursor: "pointer"
-                }}>
-                Save Diagram
-            </button>
-
-            <DmnModeler
-                xml={xml}
-                onEvent={onEvent}
-                xmlTabOptions={xmlTabOptions}
-                modelerTabOptions={{
-                    className: undefined,
-                    disabled: undefined,
-                    dmnJsOptions: bpmnJsOptions,
-                    modelerOptions: modelerOptions,
-                    propertiesPanelOptions: propertiesPanelOptions
-                }}/>
-        </div>
+        <DmnModeler
+            xml={xml}
+            onEvent={onEvent}
+            xmlTabOptions={xmlTabOptions}
+            modelerTabOptions={{
+                className: undefined,
+                disabled: undefined,
+                dmnJsOptions: bpmnJsOptions,
+                modelerOptions: modelerOptions,
+                propertiesPanelOptions: propertiesPanelOptions
+            }}/>
     );
 }
 

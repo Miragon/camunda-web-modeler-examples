@@ -1,6 +1,5 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {BpmnModeler} from "@miragon/camunda-web-modeler";
-import CustomBpmnJsModeler from "@miragon/camunda-web-modeler/dist/bpmnio/bpmn/CustomBpmnJsModeler";
 import { BpmnPropertiesPanelOptions } from "@miragon/camunda-web-modeler/dist/editor/BpmnEditor";
 import {Event} from "@miragon/camunda-web-modeler/dist/events/Events";
 import {
@@ -12,9 +11,7 @@ import {isNotificationEvent} from "@miragon/camunda-web-modeler/dist/events/mode
 import {isPropertiesPanelResizedEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/PropertiesPanelResizedEvent";
 import {isUIUpdateRequiredEvent} from "@miragon/camunda-web-modeler/dist/events/modeler/UIUpdateRequiredEvent";
 
-const MyBpmnModeler = () => {
-    const modelerRef = useRef<CustomBpmnJsModeler>();
-
+const MyBpmnModeler = (props: any) => {
     const [xml, setXml] = useState<string>("");
 
     useEffect(() => {
@@ -30,17 +27,6 @@ const MyBpmnModeler = () => {
         console.debug(`Model has been changed because of ${reason}`);
         // Do whatever you want here, save the XML and SVG in the backend, etc.
         setXml(newXml);
-    }, []);
-
-    const onSaveClicked = useCallback(async () => {
-        if (!modelerRef.current) {
-            // Should actually never happen, but required for type safety
-            console.debug("Modeler not initialized yet.")
-            return;
-        }
-
-        const { xml } = await modelerRef.current.save();
-        console.debug("Model saved...", xml);
     }, []);
 
     const onEvent = useCallback(async (event: Event<any>) => {
@@ -106,7 +92,7 @@ const MyBpmnModeler = () => {
 
     const modelerOptions = useMemo(() => ({
         className: undefined,
-        refs: [modelerRef],
+        refs: [props.modelerRef],
         container: undefined,
         containerId: undefined,
         size: {
@@ -114,46 +100,22 @@ const MyBpmnModeler = () => {
             min: undefined,
             initial: undefined
         }
-    }), []);
+    }), [props.modelerRef]);
 
     const bpmnJsOptions = useMemo(() => undefined, []);
 
     return (
-        <div style={{
-            height: "100vh"
-        }}>
-
-            <button
-                onClick={onSaveClicked}
-                style={{
-                    position: "absolute",
-                    zIndex: 1000,
-                    bottom: 25,
-                    right: 25,
-                    textTransform: "none",
-                    fontWeight: "bold",
-                    minWidth: "200px",
-                    minHeight: "40px",
-                    backgroundColor: "yellow",
-                    borderWidth: "1px",
-                    borderRadius: "4px",
-                    cursor: "pointer"
-                }}>
-                Save Diagram
-            </button>
-
-            <BpmnModeler
-                xml={xml}
-                onEvent={onEvent}
-                xmlTabOptions={xmlTabOptions}
-                modelerTabOptions={{
-                    className: undefined,
-                    disabled: undefined,
-                    bpmnJsOptions: bpmnJsOptions,
-                    modelerOptions: modelerOptions,
-                    propertiesPanelOptions: propertiesPanelOptions
-                }}/>
-        </div>
+        <BpmnModeler
+            xml={xml}
+            onEvent={onEvent}
+            xmlTabOptions={xmlTabOptions}
+            modelerTabOptions={{
+                className: undefined,
+                disabled: undefined,
+                bpmnJsOptions: bpmnJsOptions,
+                modelerOptions: modelerOptions,
+                propertiesPanelOptions: propertiesPanelOptions
+            }}/>
     );
 }
 
@@ -314,6 +276,7 @@ const ELEMENT_TEMPLATES = [
         properties: [
             {
                 type: "Hidden",
+                // eslint-disable-next-line no-template-curly-in-string
                 value: "${mailDelegate}",
                 editable: false,
                 binding: {
